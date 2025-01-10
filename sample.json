@@ -1,0 +1,27 @@
+[{
+    "name":"Kathir",
+    "age":22,
+    "city":"Coimbatore",
+    "amount":"1500"
+    },
+{
+    "name":"Anu",
+    "age":20,
+    "city":"chennai",
+    "amount":"2000"
+
+},
+{
+"name":"rajesh",
+"age":20,
+"city":"bangalore",
+"amount":"2500"
+
+},
+{
+"name":"Avinash",
+"age":20,
+"city":"delhi",
+"amount":"1750"
+
+}]

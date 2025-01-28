@@ -65,11 +65,10 @@ app.post("/login", async (req, res) => {
   }
 });
 
-//creation of schema design
 const expenseSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
-  title: { type: String, required: true }, //required true means this field is must
-  amount: { type: Number, required: true }, //title and amount is must needed fields
+  title: { type: String, required: true }, 
+  amount: { type: Number, required: true }, 
 });
 
 const Expenses = mongoose.model("Expenses", expenseSchema);
@@ -97,17 +96,16 @@ app.get("/api/expenses/:id", async (req, res) => {
 });
 
 app.post("/api/expenses", async (req, res) => {
-  //console.log(req.body)
-  const { title, amount } = req.body; //can be destructured like this
-  //console.log(title)//can be destructured and displayed separately
+ 
+  const { title, amount } = req.body; 
   try {
     const newExpense = new Expenses({
       id: uuidv4(),
-      //uuidv4 will be unique and no duplicate id will be generated
-      title: title, //title alone can be provided if the key and value are same in the object by means name and case then the key alone can be given
-      amount: amount, //amount alone can be provided if the key and value are same in the object
+     
+      title: title, 
+      amount: amount, 
     });
-    //console.log(newExpense)//to check the uuid generated
+    
     const savedExpense = await newExpense.save();
     res.status(200).json(savedExpense);
   } catch (err) {
